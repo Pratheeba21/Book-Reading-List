@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/books";
+const API_URL = "https://book-reading-list-backend.onrender.com/books";
 
 // 1. Load books from DB on startup
 window.addEventListener("DOMContentLoaded", async () => {

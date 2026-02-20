@@ -5,19 +5,20 @@ const Book = require("./model/Book");
 
 const app = express();
 app.use(express.json());
-app.use(cors()); 
+app.use(cors());
 
 mongoose
-  .connect("mongodb://localhost:27017/libraryDB")
+  .connect(
+    "mongodb+srv://Pratheeba:PratheebaMongoDBAtlas@cluster0.ixnufht.mongodb.net/libraryDB?appName=Cluster0",
+  )
   .then(() => console.log("MongoDB Connected for Library!"))
   .catch((err) => console.log(err));
 
-
+//mongodb+srv://Pratheeba:PratheebaMongoDBAtlas@cluster0.ixnufht.mongodb.net/libraryDB?appName=Cluster0
 app.get("/books", async (req, res) => {
   const books = await Book.find();
   res.json(books);
 });
-
 
 app.post("/books", async (req, res) => {
   const newBook = new Book({
@@ -28,7 +29,6 @@ app.post("/books", async (req, res) => {
   res.json(newBook);
 });
 
-
 app.put("/books/:id", async (req, res) => {
   const book = await Book.findByIdAndUpdate(
     req.params.id,
@@ -38,10 +38,10 @@ app.put("/books/:id", async (req, res) => {
   res.json(book);
 });
 
-
 app.delete("/books/:id", async (req, res) => {
   await Book.findByIdAndDelete(req.params.id);
   res.json({ message: "Deleted" });
 });
 
-app.listen(3000, () => console.log("Library Server running on port 3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Library Server running on port 3000"));
