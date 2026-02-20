@@ -1,0 +1,15 @@
+body { background: #121212; color: white; font-family: 'Arial'; display: flex; justify-content: center; padding: 50px; }
+        .container { width: 450px; text-align: center; }
+        h1 { background: linear-gradient(to right, #bb86fc, #03dac6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+        input { padding: 12px; margin: 5px; border-radius: 5px; border: 1px solid #333; background: #1e1e1e; color: white; width: 45%; }
+        #add-btn { padding: 12px; width: 93%; background: #03dac6; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        #add-btn:hover { box-shadow: 0 0 15px #03dac6; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .book-card { 
+            background: #1e1e1e; padding: 15px; border-radius: 10px; border-left: 4px solid #bb86fc;
+            transition: 0.3s; text-align: left; position: relative;
+        }
+        .book-card:hover { transform: translateY(-5px) scale(1.02); background: #252525; }
+        .read-btn { background: #333; color: #bbb; border: none; padding: 5px; margin-top: 10px; cursor: pointer; font-size: 11px; width: 100%; }
+        .is-read { border-left-color: #03dac6; opacity: 0.6; }
+        .dlt { color: #ff4d4d; cursor: pointer; float: right; font-weight: bold; }
